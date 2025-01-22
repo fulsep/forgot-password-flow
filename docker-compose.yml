@@ -10,10 +10,10 @@ services:
     ports:
       - 8888:8888
   mailslurper:
-    image: ghcr.io/fulsep/mailslurper #https://github.com/fulsep/mailslurper.git
+    build: https://github.com/fulsep/mailslurper.git
     ports:
       - 2500:2500
       - 8080:8080
       - 8085:8085
     volumes:
-      - ./mailslurper.json:/opt/mailslurper/config.json:ro
+      - ./mailslurper.json:/config.json:ro
