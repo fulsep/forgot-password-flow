@@ -93,7 +93,7 @@ func ResetPasswordTemplate(token string) string {
 }
 
 func SendMail(recipient string, title string, body string) {
-	d := gomail.NewDialer("mailslurp", 2500, "user", "123456")
+	d := gomail.NewDialer("mailslurper", 2500, "user", "123456")
 	d.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 
 	m := gomail.NewMessage()
