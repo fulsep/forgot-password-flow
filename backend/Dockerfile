@@ -4,7 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -mod vendor -o backend main.go
+RUN go mod download
+RUN go build -o backend main.go
+
+# RUN go build -mod vendor -o backend main.go
 
 FROM debian:bookworm-slim
 
